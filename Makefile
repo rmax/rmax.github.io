@@ -56,4 +56,7 @@ stopserver:
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
-.PHONY: html help clean regenerate serve devserver publish
+clean:
+	find $(OUTPUTDIR) -type f -name '*.html' -exec rm {} \;
+
+.PHONY: html help clean regenerate serve devserver publish clean
